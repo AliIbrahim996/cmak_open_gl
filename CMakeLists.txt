@@ -22,6 +22,6 @@ target_link_libraries(${PROJECT_NAME} ${REQUIRED_LIB})
 
 # Move dlls to your executable directory
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            "${CMAKE_CURRENT_SOURCE_DIR}/system/GLUT32.DLL"
+            COMMAND ${CMAKE_COMMAND} -E copy_directory
+            "${CMAKE_CURRENT_SOURCE_DIR}/system"
             $<TARGET_FILE_DIR:${PROJECT_NAME}>)
